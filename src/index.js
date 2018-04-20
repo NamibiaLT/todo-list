@@ -5,16 +5,19 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 class ToDoList extends Component{
-  function toDo(props) {
-    const things = props.things;
-    const listItems = things.map((chore) =>
-      <li key={chore}>
-        {item}
-      </li>
-    );
-    return (
-      <ul>{listItems}</ul>
-    );
+  render() {
+    return(
+      <div className="myList">
+        <div className="header">
+          <form>
+            <input placeholder="enter task">
+            </input>
+            <button type="submit">Add</button>
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
+    )
   }
 }
 
@@ -22,5 +25,5 @@ class ToDoList extends Component{
 const things = ['react', 'buy groceries', 'pay bill'];
 
 
-ReactDOM.render(<App things={things}/>, document.getElementById('root'));
+ReactDOM.render(<ToDoList/>, document.getElementById('root'));
 registerServiceWorker();
